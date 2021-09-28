@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-ARG" dir="ltr">
+  <head> 
+  {% load static %}{% block meta %}{% include "app/modulo.html" %}{% endblock %} 
+  </head>
+  <!-- body -->
+  <body class="main-layout">
+    {% block inicio %}{% include "app/inicio.html" %}{% endblock %}
+        {% block blog%}{% include "app/parte_blog.html" %}{% endblock %}
+
+        <!--Inicio de pasteleria-->
+    <div class="container">
+        <div class="row">
+          {% block content %} {% for project in pasteleria %}
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="card-img-top img-fluid"
+                src="{{ project.image.url }}"
+                alt=""
+              />
+            </div>
+            <div class="card-body card-text">
+              <h4>{{ project.title  | upper }}</h4>
+              <p>{{ project.description | linebreaksbr}}</p>
+            </div>
+          </div>
+          {% endfor %} {% endblock content %}
+        </div>
+      </div>
+    <!--Fin de pasteleria-->
+    <br>
+    <br>
+     <!--Inicio de Desayuno-->
+    <div class="container">
+        <div class="row">
+          {% block contentido %} {% for proyect in desayuno %}
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="card-img-top img-fluid"
+                src="{{ proyect.image.url }}"
+                alt=""
+              />
+            </div>
+            <div class="card-body card-text">
+              <h4>{{ proyect.title | upper }}</h4>
+              <p>{{ proyect.description }}</p>
+            </div>
+          </div>
+          {% endfor %} {% endblock contentido %}
+        </div>
+      </div>
+    <!--Fin de Desayuno-->
+    <br>
+    <br>
+    {% block foo %}{% include "app/footer.html" %}{% endblock %}
+  </body>
+</html>

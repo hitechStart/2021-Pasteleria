@@ -1,0 +1,130 @@
+        {% load static %}
+        <fooetr>
+          <div class="footer">
+            <div class="container-fluid">
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="footer_logo">
+                    <a href="{% url 'index' %}"
+                      ><img
+                        src="{% static 'app/images/logo1.jpg' %}"
+                        alt="logo"
+                    /></a>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <ul class="lik">
+                    <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'recipe' %}">Recipe</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'contact' %}">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-12">
+                  <div class="new">
+                    <h3>Newsletter</h3>
+                    <form class="newtetter">
+                      <input
+                        class="tetter"
+                        placeholder="Your email"
+                        type="text"
+                        name="Your email"
+                      />
+                      <button class="submit">Subscribe</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="copyright">
+              <div class="container">
+                <p>
+                  © 2021 All Rights Reserved. Design by<a
+                    href="https://html.design/"
+                  >
+                    Di Ludovico Maximiliano</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </fooetr>
+        <!-- end footer -->
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <!-- Javascript files-->
+    <script src="{% static 'app/js/jquery.min.js'%}"></script>
+    <script src="{% static 'app/js/popper.min.js'%}"></script>
+    <script src="{% static 'app/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'app/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'app/js/custom.js'%}"></script>
+    <script src="{% static 'app/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+
+    <script src="{% static 'app/js/jquery-3.0.0.min.js'%}"></script>
+    <!--Materialize JS-->
+    <script src="{% static 'app/js/materialize.js'%}"></script>
+    <script src="{% static 'app/js/materialize.min.js'%}"></script>
+    <!--Modernizr es un pequeño fragmento de código JavaScript que detecta automáticamente
+      la disponibilidad de tecnologías web de próxima generación en los navegadores de sus usuarios.
+       En lugar de incluir en la lista negra rangos completos de navegadores basados ​​en el 
+       " rastreo de UA " , Modernizr utiliza la detección de funciones para permitirle adaptar 
+       fácilmente las experiencias de sus usuarios en función de las capacidades reales de su navegador.
+Con este conocimiento que le brinda Modernizr, puede aprovechar estas nuevas características en los 
+navegadores que pueden renderizarlas o utilizarlas, y aún tener medios fáciles y confiables para controlar 
+la situación de los navegadores que no pueden.-->
+    <script src="{% static 'app/js/modernizr-custom.js'%}"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+          theme: "minimal",
+        });
+
+        $("#dismiss, .overlay").on("click", function () {
+          $("#sidebar").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        $("#sidebarCollapse").on("click", function () {
+          $("#sidebar").addClass("active");
+          $(".overlay").addClass("active");
+          $(".collapse.in").toggleClass("in");
+          $("a[aria-expanded=true]").attr("aria-expanded", "false");
+        });
+      });
+    </script>
+
+    <style>
+      #owl-demo .item {
+        margin: 3px;
+      }
+      #owl-demo .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+          margin: 10,
+          nav: true,
+          loop: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 2,
+            },
+            1000: {
+              items: 5,
+            },
+          },
+        });
+      });
+    </script>

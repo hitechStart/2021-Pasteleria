@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es-ARG" dir="ltr">
+  <head>
+  {% load static %}
+  {% block meta %}{%  include "app/modulo.html" %}{% endblock %}
+  </head>
+  <!-- body -->
+  <body class="main-layout">
+ {% block acerca_de%}{%  include "app/acerca_de.html" %}{% endblock %}
+ {% block inicio %}{%  include "app/inicio.html" %}{% endblock %}
+{% block foo %}{%  include "app/footer.html" %}{% endblock %}
+</body>
+</html>
